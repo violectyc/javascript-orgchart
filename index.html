@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <link rel="stylesheet" href="./src/css/jquery.orgchart.css">
+    <script src="./src/js/jquery.orgchart.js"></script>
+    <script src="./src/js/html2canvas.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.15/lodash.js"></script>
+    <style>
+        body {
+            font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        #chart-container {
+            display: block;
+            height: calc(100vh - 60px);
+            width: calc(100% - 24px);
+            border: 2px dashed #aaa;
+            border-radius: 5px;
+            overflow: auto;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .orgchart{
+            cursor: pointer;
+        }
+        #export {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 100;
+            display: none;
+        }
+        .loading{
+            display: none;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top:100px;
+            position: absolute;
+            z-index: 100;
+        }
+        .loading span{
+            display: inline-block;
+            width: 8px;
+            height: 100%;
+            border-radius: 4px;
+            background: lightgreen;
+            -webkit-animation: load .8s ease infinite;
+        }
+        @-webkit-keyframes load{
+            0%,100%{
+                height: 40px;
+                background: lightgreen;
+            }
+            50%{
+                height: 70px;
+                margin: -15px 0;
+                background: lightblue;
+            }
+        }
+        .loading span:nth-child(2){
+            -webkit-animation-delay:0.0s;
+        }
+        .loading span:nth-child(3){
+            -webkit-animation-delay:0.2s;
+        }
+        .loading span:nth-child(4){
+            -webkit-animation-delay:0.4s;
+        }
+        .loading span:nth-child(5){
+            -webkit-animation-delay:0.6s;
+        }
+    </style>
+</head>
+<body>
+        <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+        </div> 
+    <div id="chart-container" >
+        <button id="export">export</button>
+    </div>
+    <script src="./src/js/index.js"></script>
+</body>
+</html>

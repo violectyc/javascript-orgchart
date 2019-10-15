@@ -4,7 +4,7 @@
 
 ![1571108003790](C:\Users\violetyc\AppData\Roaming\Typora\typora-user-images\1571108003790.png)
 
-基本代码如下
+基本代码如下入口函数在fetch
 
 ###### html
 
@@ -228,6 +228,7 @@ const eportImg = () => {
 fetch('./d3.json').then(res => res.json()).then(res => {
     init(res);
 });
+// 入口函数
 
 const controlScale = scale => {
 
@@ -272,6 +273,12 @@ $(document).on('mousewheel DOMMouseScroll', onMouseScroll);
 })()) //取悦boss
 
 ```
+
+##### 部分数据格式如下
+
+
+
+![1571109034104](C:\Users\violetyc\AppData\Roaming\Typora\typora-user-images\1571109034104.png)
 
 ##### 实现了缩放，脱拽，导出，如果要自定义其他节点层级或样式复写下templete这个函数即可。
 
